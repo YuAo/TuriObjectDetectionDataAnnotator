@@ -230,6 +230,8 @@ class AnnotationView: NSView {
     
     private weak var activeBoundingBoxView: BoundingBoxView? = nil
     
+    private var lastLabel: String = ""
+    
     override func mouseMoved(with event: NSEvent) {
         if let view = self.newlyCreatedBoundingBoxView {
             self.newlyCreatedBoundingBoxView = nil
@@ -238,7 +240,7 @@ class AnnotationView: NSView {
             alert.messageText = NSLocalizedString("Rename", comment: "")
             alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
             alert.addButton(withTitle: NSLocalizedString("Cancel", comment: ""))
-            let inputTextField = NSTextField(string: "Unknown")
+            let inputTextField = NSTextField(string: self.lastLabel)
             inputTextField.sizeToFit()
             inputTextField.frame.size.width = 300
             alert.accessoryView = inputTextField
@@ -246,6 +248,7 @@ class AnnotationView: NSView {
                 view.removeFromSuperview()
                 if response == .alertFirstButtonReturn && inputTextField.stringValue.count > 0 {
                     let boundingBox = BoundingBox(coordinates: self.coordinatesFromBoundingBoxView(view), label: inputTextField.stringValue)
+                    self.lastLabel = inputTextField.stringValue
                     self.boundingBoxes.append(boundingBox)
                     self.boundingBoxesChangedHandler?(self.boundingBoxes)
                 }
@@ -306,10 +309,6 @@ class AnnotationView: NSView {
     
     private weak var newlyCreatedBoundingBoxView: BoundingBoxView?
     private var newlyCreatedBoundingBoxSize: CGSize = .zero
-    
-    override func moveUp(_ sender: Any?) {
-        print("mouse up")
-    }
     
     override func mouseDragged(with event: NSEvent) {
         if let activeView = self.activeBoundingBoxView {
