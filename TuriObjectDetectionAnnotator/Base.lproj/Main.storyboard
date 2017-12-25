@@ -725,14 +725,14 @@
                                         <action selector="annotateNextImage:" target="B8D-0N-5wS" id="bVz-jU-qL7"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="75C4A710-4FE2-41C2-A53A-A3BD26A75854" label="Open in Finder" paletteLabel="Open in Finder" image="NSTouchBarFolderTemplate" id="DWZ-G0-Xex">
+                                <toolbarItem implicitItemIdentifier="75C4A710-4FE2-41C2-A53A-A3BD26A75854" label="Open in Finder" paletteLabel="Open in Finder" image="NSTouchBarQuickLookTemplate" id="DWZ-G0-Xex">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="42" height="25"/>
                                     <size key="maxSize" width="42" height="25"/>
                                     <button key="view" verticalHuggingPriority="750" id="2KH-un-xyd">
                                         <rect key="frame" x="21" y="14" width="42" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSTouchBarFolderTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yG1-nk-p6s">
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSTouchBarQuickLookTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yG1-nk-p6s">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -741,8 +741,25 @@
                                         <action selector="openWorkingDirectoryInFinder:" target="B8D-0N-5wS" id="RWX-dU-B7f"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="7ECFD489-40CE-4950-87FE-416B0BE4BE6F" label="Open..." paletteLabel="Open..." image="NSTouchBarFolderTemplate" id="rGx-cS-lTL">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="42" height="25"/>
+                                    <size key="maxSize" width="42" height="25"/>
+                                    <button key="view" verticalHuggingPriority="750" id="cCX-c8-3nm">
+                                        <rect key="frame" x="2" y="14" width="42" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSTouchBarFolderTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bfa-LN-dYf">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="openDocument:" target="B8D-0N-5wS" id="onJ-dz-PZm"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
+                                <toolbarItem reference="rGx-cS-lTL"/>
                                 <toolbarItem reference="rzw-xV-0r1"/>
                                 <toolbarItem reference="7SX-kq-WQN"/>
                                 <toolbarItem reference="3li-Q8-JOI"/>
@@ -766,7 +783,7 @@
             <objects>
                 <splitViewController id="gHA-R1-jvC" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem holdingPriority="251" behavior="sidebar" id="Jd8-nV-c5N"/>
+                        <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="Jd8-nV-c5N"/>
                         <splitViewItem holdingPriority="260" id="ge2-6d-NL4"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="9XY-ia-Y0A">
@@ -907,5 +924,6 @@
         <image name="NSGoBackTemplate" width="9" height="12"/>
         <image name="NSGoForwardTemplate" width="9" height="12"/>
         <image name="NSTouchBarFolderTemplate" width="22" height="30"/>
+        <image name="NSTouchBarQuickLookTemplate" width="22" height="30"/>
     </resources>
 </document>
